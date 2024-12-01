@@ -1,8 +1,18 @@
 ![Build](https://github.com/bastillion-io/Bastillion/actions/workflows/github-build.yml/badge.svg)
 ![CodeQL](https://github.com/bastillion-io/Bastillion/actions/workflows/codeql-analysis.yml/badge.svg)
 
-![Bastillion](https://www.bastillion.io/images/bastillion_40x40.png) Bastillion
+![Bastillion](https://www.bastillion.io/images/bastillion_40x40.png) Bastillion (Docker)
 ======
+This repository contains a version of [Bastillion](https://github.com/bastillion-io/Bastillion) that can be ran with Docker.
+
+It is currently a work-in-progress. 
+
+As of the moment, the container is functional without persistant data. Web UI is available at :8080. Settings can be set with ENV variables (see the [Dockerfile](https://github.com/lusky3/Bastillion-Docker/blob/main/Dockerfile) until this Readme is properly updated).
+
+The source is currently forked to address a security issue (java/weak-cryptographic-algorithm) and address outdated dependencies, but will revert to parity once upstream is updated.
+
+Original Readme
+------
 Bastillion is a web-based SSH console that centrally manages administrative access to systems. Web-based administration is combined with management and distribution of user's public SSH keys. Key management and administration is based on profiles assigned to defined users.
 
 Administrators can login using two-factor authentication with [Authy](https://authy.com/) or [Google Authenticator](https://github.com/google/google-authenticator). From there they can manage their public SSH keys or connect to their systems through a web-shell. Commands can be shared across shells to make patching easier and eliminate redundant command execution.
