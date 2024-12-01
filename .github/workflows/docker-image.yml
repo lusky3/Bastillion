@@ -63,6 +63,12 @@ jobs:
       run: |
         cd Bastillion
         mvn --batch-mode --update-snapshots clean package verify
+    
+    - name: Upload WAR file
+      uses: actions/upload-artifact@v4
+      with:
+        name: bastillion-war
+        path: target/bastillion-*.war
 
     - name: Build Docker Image
       run: |
