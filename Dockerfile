@@ -1,6 +1,11 @@
 # Use a base image to set file permissions
 FROM alpine as file_prep
 
+# Add a description for the Docker image
+LABEL org.opencontainers.image.source="https://github.com/lusky3/Bastillion-Docker/"
+LABEL org.opencontainers.image.description="Bastillion is a web-based SSH console that centrally manages administrative access to systems. Web-based administration is combined with management and distribution of user's public SSH keys."
+LABEL org.opencontainers.image.licenses="Prosperity Public License"
+
 # Create a directory for the files
 RUN mkdir -p /app
 
@@ -13,7 +18,9 @@ RUN chown -R 999:999 /app
 FROM jetty:9.4-jre21
 
 # Add a description for the Docker image
+LABEL org.opencontainers.image.source="https://github.com/lusky3/Bastillion-Docker/"
 LABEL org.opencontainers.image.description="Bastillion is a web-based SSH console that centrally manages administrative access to systems. Web-based administration is combined with management and distribution of user's public SSH keys."
+LABEL org.opencontainers.image.licenses="Prosperity Public License"
 
 # Set the environment variable to configure Jetty
 ENV JETTY_BASE=/var/lib/jetty
